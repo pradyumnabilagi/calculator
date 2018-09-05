@@ -109,5 +109,6 @@ char *add(char *a,char *b)
           //returnInt=sub(a,b);
        }   
    }
+   return returnInt;
    
 }
