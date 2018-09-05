@@ -94,7 +94,7 @@ char *add(char *a,char *b)
              i++;
           }
           a=(char*)realloc(a,(g-1)*sizeof(char));
-          //returnInt=sub(b,a);
+          returnInt=sub(b,a);
        }
        else
        {
@@ -106,7 +106,7 @@ char *add(char *a,char *b)
              i++;
           }
           b=(char*)realloc(b,(g-1)*sizeof(char));
-          //returnInt=sub(a,b);
+          returnInt=sub(a,b);
        }   
    }
    return returnInt;

@@ -67,7 +67,7 @@ char *sub(char *a,char *b)
             store=a;
             a=b;
             b=store;
-
+            
 
 
             size=strlen(returnInt)+1;
