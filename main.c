@@ -14,8 +14,8 @@ int main()
     char *a;
     char *b;
     char *r;
-    a=(char*)malloc(15*sizeof(char));
-    b=(char*)malloc(15*sizeof(char));
+    a=(char*)malloc(1025*sizeof(char));
+    b=(char*)malloc(1025*sizeof(char));
     scanf("%s%s",a,b);
     r=multiplication(a,b);
     printf("\n%s",r);
