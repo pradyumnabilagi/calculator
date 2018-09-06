@@ -7,6 +7,7 @@
 char **understandstrings(char *a,char* b);
 char *add(char *a,char *b);
 char *sub(char *a,char *b);
+char *multiplication(char *a,char *b);
 
 int main()
 {
@@ -16,7 +17,7 @@ int main()
     a=(char*)malloc(15*sizeof(char));
     b=(char*)malloc(15*sizeof(char));
     scanf("%s%s",a,b);
-    r=sub(a,b);
+    r=multiplication(a,b);
     printf("\n%s",r);
     return 0;
 }

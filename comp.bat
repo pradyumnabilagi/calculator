@@ -1,2 +1,2 @@
-gcc ./main.c ./add.c ./stringunderstand.c ./sub.c -o app.exe
+gcc ./main.c ./add.c ./stringunderstand.c ./sub.c ./multiplication.c -o app.exe
 

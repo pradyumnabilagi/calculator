@@ -109,6 +109,8 @@ char *add(char *a,char *b)
           returnInt=sub(a,b);
        }   
    }
+   free(a);
+   free(b);
    return returnInt;
    
 }

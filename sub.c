@@ -69,9 +69,9 @@ char *sub(char *a,char *b)
             i=0;
             while(i<strlen(a))
             {
-               if(*(a+strlen(a)-i-1)=='.')
+                if(*(a+strlen(a)-i-1)=='.')
                 {
-                   *(returnInt+strlen(returnInt)-1-i)='.';
+                    *(returnInt+strlen(returnInt)-1-i)='.';
                 }
                 else if(*(a+strlen(a)-i-1)>=*(b+strlen(b)-i-1))
                 {
@@ -183,7 +183,8 @@ char *sub(char *a,char *b)
             returnInt=add(a,b);
         }
     }
-   
+   free(a);
+   free(b);
    return returnInt;
 
 }
