@@ -1,6 +1,7 @@
 # Prerequisites
 *.d
 /play
+git.bat
 # Object files
 *.o
 *.ko

@@ -44,11 +44,11 @@ char *sub(char *a,char *b)
         i=0;
         while(i<strlen(a)&&g==0)
         {
-            if(*(a+i)<*(b+i))
+            if(*(a+i)>*(b+i))
             {
                g=1; 
             }
-            else if(*(a+i)>*(b+i))
+            else if(*(a+i)<*(b+i))
             {
                g=-1;
             }
@@ -58,18 +58,92 @@ char *sub(char *a,char *b)
         
         if(g==1||g==0)
         {
-          
-
-
+            i=0;
+            returnInt=(char*)malloc((strlen(a)+1)*sizeof(char));
+            while(i<strlen(a)+1)
+            {
+                *(returnInt+i)='0';
+                i++;
+            }
+            *(returnInt+strlen(a))='\0';
+            i=0;
+            while(i<strlen(a))
+            {
+               if(*(a+strlen(a)-i-1)=='.')
+                {
+                   *(returnInt+strlen(returnInt)-1-i)='.';
+                }
+                else if(*(a+strlen(a)-i-1)>=*(b+strlen(b)-i-1))
+                {
+                   *(returnInt+strlen(returnInt)-1-i)=*(a+strlen(a)-i-1)-*(b+strlen(b)-i-1)+48;   
+                }
+                else if(*(a+strlen(a)-i-1)<*(b+strlen(b)-i-1))
+                {
+                    g=0;
+                    size=1;
+                    while(g==0)
+                    {
+                        if(*(a+strlen(a)-1-i-size)=='0')
+                        {
+                            *(a+strlen(a)-1-i-size)='9';
+                        }
+                        else if(*(a+strlen(a)-1-i-size)>48)
+                        {
+                            *(a+strlen(a)-1-i-size)=*(a+strlen(a)-1-i-size)-1;
+                            g=1;
+                        }
+                        size++;
+                    }
+                    *(returnInt+strlen(returnInt)-1-i)=*(a+strlen(a)-1-i)+10-*(b+strlen(b)-i-1)+48;   
+                }
+                i++;
+            }
         }
         else if(g==-1)
         {
             store=a;
             a=b;
             b=store;
-            
-
-
+            i=0;
+            returnInt=(char*)malloc((strlen(a)+1)*sizeof(char));
+            while(i<strlen(a)+1)
+            {
+                *(returnInt+i)='0';
+                i++;
+            }
+            *(returnInt+strlen(a))='\0';
+            i=0;
+            while(i<strlen(a))
+            {
+               if(*(a+strlen(a)-i-1)=='.')
+                {
+                   *(returnInt+strlen(returnInt)-1-i)='.';
+                }
+                else if(*(a+strlen(a)-i-1)>=*(b+strlen(b)-i-1))
+                {
+                   *(returnInt+strlen(returnInt)-1-i)=*(a+strlen(a)-i-1)-*(b+strlen(b)-i-1)+48;   
+                }
+                else if(*(a+strlen(a)-i-1)<*(b+strlen(b)-i-1))
+                {
+                    g=0;
+                    size=1;
+                    while(g==0)
+                    {
+                        if(*(a+strlen(a)-1-i-size)=='0')
+                        {
+                            *(a+strlen(a)-1-i-size)='9';
+                        }
+                        else if(*(a+strlen(a)-1-i-size)>48)
+                        {
+                            *(a+strlen(a)-1-i-size)=*(a+strlen(a)-1-i-size)-1;
+                            g=1;
+                        }
+                        size++;
+                    }
+                    *(returnInt+strlen(returnInt)-1-i)=*(a+strlen(a)-1-i)+10-*(b+strlen(b)-i-1)+48;   
+                }
+                i++;
+            }
             size=strlen(returnInt)+1;
             i=size+1-1;
             returnInt=(char*)realloc(returnInt,(size+1)*sizeof(char));
