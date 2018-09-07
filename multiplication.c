@@ -1,10 +1,8 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
+#include"project.h"
 
-char *sub(char *a,char *b);
-char *add(char *a,char *b);
-char *understandstrings(char *a,char *b);
 
 char *multiplication(char *a,char *b)
 {
@@ -174,6 +172,10 @@ char *multiplication(char *a,char *b)
         *returnInt='-';
     }
     
+    free(a);
+    free(b);
+    free(conserve);
+    free(r);
     
     return returnInt;
 }

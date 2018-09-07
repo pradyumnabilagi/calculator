@@ -1,9 +1,8 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
+#include"project.h"
 
-char **understandstrings(char *a,char *b);
-char *add(char *a,char *b);
 
 char *sub(char *a,char *b)
 {

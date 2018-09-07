@@ -1,6 +1,7 @@
 #include<stdlib.h>
 #include<stdio.h>
 #include<string.h>
+#include"project.h"
 
 char **understandstrings(char*a,char*b)
 {

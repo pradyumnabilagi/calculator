@@ -2,12 +2,9 @@
 #include<stdlib.h>
 #include<string.h>
 #include<conio.h>
+#include"project.h"
 
 
-char **understandstrings(char *a,char* b);
-char *add(char *a,char *b);
-char *sub(char *a,char *b);
-char *multiplication(char *a,char *b);
 
 int main()
 {
@@ -17,7 +14,7 @@ int main()
     a=(char*)malloc(1025*sizeof(char));
     b=(char*)malloc(1025*sizeof(char));
     scanf("%s%s",a,b);
-    r=multiplication(a,b);
+    r=division(a,b);
     printf("\n%s",r);
     return 0;
 }
