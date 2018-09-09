@@ -12,6 +12,6 @@ note if division function is given an input numbers such that the answer is like
 
 please if you want try to run this code.If you find any errors in excetution of application then report.
 
-note:while using this calculator make sure that you use division carefully.If you want to use division ,use it only for testing.use normal calculator to check weather the answer is correct or not.if the answer does not appear or the application is still for long time not even ending ,then don't wait for too long because the program will keep on using more and more memory of your computer so close the application and check weather the resulting number is having an infinetly reapeting group of decimal digits by using your knowledge of math.
+note:while using this calculator make sure that you use division carefully.If you want to use division ,use it only for testing.use normal calculator to check weather the answer is correct or not.if the answer does not appear or the application is still for long time not even ending ,then don't wait for too long because the program will keep on using more and more memory of your computer so close the application and check weather the resulting number is having an infinetly reapeting group of decimal digits by using your knowledge of math.and also don't put the second number entry equal to zero.
 
 and also you can rely on it while using other three operations because in that case the answer will be infinetly accurate.
