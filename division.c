@@ -5,6 +5,7 @@
 
 char *division(char *a,char *b)
 {
+    
     int i=0,size=0,g=0,p=0,t=0,k=0;
     char *returnInt;
     char *conserve;
@@ -12,8 +13,10 @@ char *division(char *a,char *b)
     char *check;
     char *increment;
     char **r;
+  
     if((*a!='-'&&*b!='-')||(*a=='-'&&*b=='-'))
     {
+       
         if(*a=='-'&&*b=='-')
         {
             i=0;
@@ -189,6 +192,7 @@ char *division(char *a,char *b)
             }
                 
             returnInt=add(returnInt,increment);
+            printf("%s ",returnInt);
             increment=(char*)malloc((strlen(conserve)+1)*sizeof(char));
             k=0;
             while(k<strlen(increment)+1)
@@ -198,7 +202,7 @@ char *division(char *a,char *b)
             }
             
         }
-        
+        printf("\n");
         conserve=(char*)realloc(conserve,(strlen(increment)+1)*sizeof(char));
         k=0;
         while(k<strlen(conserve)+1)
@@ -254,8 +258,10 @@ char *division(char *a,char *b)
             }
         }    
     }
-
     
+    
+    
+
     if(p==1)
     {
         size=strlen(returnInt)+1;
@@ -268,6 +274,7 @@ char *division(char *a,char *b)
         }
         *returnInt='-';
     }   
+    
 
     free(conserve);
     free(conserve1);

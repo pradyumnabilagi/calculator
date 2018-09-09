@@ -13,7 +13,7 @@ int main()
     char *r;
     a=(char*)malloc(1025*sizeof(char));
     b=(char*)malloc(1025*sizeof(char));
-    scanf("%s%s",a,b);
+    scanf("%s%s",&a,&b);
     r=division(a,b);
     printf("\n%s",r);
     return 0;
