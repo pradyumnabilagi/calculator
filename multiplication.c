@@ -104,12 +104,13 @@ char *multiplication(char *a,char *b)
     r=(char**)malloc((strlen(b))*sizeof(char*));
     returnInt=(char*)malloc(2*sizeof(char));
     *returnInt='0';
-    *(returnInt)='\0';
+    *(returnInt+1)='\0';
     while(i<strlen(b))
     {
         *(r+i)=(char*)malloc(2*sizeof(char));
         **(r+i)='0';
         *(*(r+i)+1)='\0';
+        
         while(g<*(b+strlen(b)-1-i)-48)
         {
             conserve=(char*)realloc(conserve,(strlen(a)+1)*sizeof(char));
@@ -133,7 +134,7 @@ char *multiplication(char *a,char *b)
             g++;
         }
         g=0;
-
+        
         size=strlen(*(r+i))+1;
         *(r+i)=(char*)realloc(*(r+i),(size+i)*sizeof(char));
         k=size-2;
@@ -146,11 +147,34 @@ char *multiplication(char *a,char *b)
         *(*(r+i)+size+i-1)='\0';
         
         returnInt=add(returnInt,*(r+i));
+        
         i++;
+
     }
     
     size=strlen(returnInt)+1;
     
+    
+    
+    if(size-t-2<0)
+    {
+        k=t+2-size;
+        returnInt=(char*)realloc(returnInt,(size+t+2-size)*sizeof(char));  
+        size=t+2;
+        g=size-1;
+        while(g>k-1)
+        {
+            *(returnInt+g)=*(returnInt+g-k);
+            g--;
+        }
+        g=0;
+        while(g<k)
+        {
+            *(returnInt+g)='0';
+            g++;
+        }  
+    }
+
     i=size-2;
     while(i>size-t-2)
     {

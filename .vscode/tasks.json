@@ -8,7 +8,7 @@
             "type": "shell",
             "command": "gcc",
             "args": [
-                "-g", "main.c"
+                "-g", "main.c", "add.c", "sub.c", "stringunderstand.c", "multiplication.c","division.c",
             ],"group": {
                 "kind": "build",
                 "isDefault": true

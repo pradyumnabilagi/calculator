@@ -192,7 +192,7 @@ char *division(char *a,char *b)
             }
                 
             returnInt=add(returnInt,increment);
-            printf("%s ",returnInt);
+           
             increment=(char*)malloc((strlen(conserve)+1)*sizeof(char));
             k=0;
             while(k<strlen(increment)+1)
@@ -202,7 +202,7 @@ char *division(char *a,char *b)
             }
             
         }
-        printf("\n");
+        
         conserve=(char*)realloc(conserve,(strlen(increment)+1)*sizeof(char));
         k=0;
         while(k<strlen(conserve)+1)
