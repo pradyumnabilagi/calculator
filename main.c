@@ -17,7 +17,7 @@ int main()
     b=(char*)malloc(15*sizeof(char));
     printf("enter the two numbers\n");
     scanf("%s%s",a,b);
-    printf("choose which operation\nfor division enter '/'\nfor multiplication enter '*'\nfor addition enter '+'\nfor substraction enter '-'");
+    printf("choose which operation\nfor division enter '/'\nfor multiplication enter '*'\nfor addition enter '+'\nfor substraction enter '-'\n");
     scanf("%s",chooser);
     if(*chooser=='/')
     {
