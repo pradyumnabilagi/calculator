@@ -400,7 +400,7 @@ char *division(char *a,char *b)
             i++;
             //
         }
-            
+           
     }
     
     

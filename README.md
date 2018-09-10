@@ -12,6 +12,7 @@ note if division function is given an input numbers such that the answer is like
 
 please if you want to try to run this code then run it and check if you find any errors in excetution of application .If there are any errors then please report.
 
+still the problem of this code is the division may never work or if any number gets very complex the answer may take infinite time to appear by increasing retardation ,also I do not know because i have not taken time complexcity into consideration at all while writing the code for this.And also i had no idea that this can take place.so to say the actual truth i do not know the code is correct or wrong at all,because i forgot about time complexcity completely.it might also be like exponential graph in which if you keep moving towards -ve infinity with constant velocity the functional value will never become zero at all even after the end of world. 
 note:don't put the second number entry equal to zero while using division.
 
 
