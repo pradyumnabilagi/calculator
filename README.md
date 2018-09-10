@@ -14,4 +14,4 @@ please if you want to try to run this code then run it and check if you find any
 
 note:don't put the second number entry equal to zero while using division.
 
-and also you can rely on it while using other three operations because in that case the answer will be infinetly accurate.
+
