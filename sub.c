@@ -10,6 +10,7 @@ char *sub(char *a,char *b)
     char **r;
     char *store;
     r=understandstrings(a,b);
+    int kl=0;
     a=*r;
     b=*(r+1);
     free(r);
@@ -98,6 +99,41 @@ char *sub(char *a,char *b)
                 i++;
             }
             ///
+            i=0;
+            while(*(returnInt+i)!='.')
+            { 
+                i++;
+            }
+            kl=i;
+            g=0;
+            while(*(returnInt+g)=='0'&&g<kl-1)
+            {
+                g++;
+            }
+            i=0;
+            
+            size=strlen(returnInt)-g+1;
+            while(i<size)
+            {
+                *(returnInt+i)=*(returnInt+i+g);
+                i++;
+            }
+            returnInt=(char*)realloc(returnInt,size*sizeof(returnInt));
+            
+            i=0;
+            while(*(returnInt+strlen(returnInt)-1-i)=='0')
+            {
+                i++;
+            }
+            size=strlen(returnInt)+1-i;
+            returnInt=(char*)realloc(returnInt,(strlen(returnInt)+1-i)*sizeof(char));
+            *(returnInt+size-1)='\0';
+            size=strlen(returnInt)+1;
+            if(*(returnInt+size-2)=='.')
+            {
+                returnInt=(char*)realloc(returnInt,(size-1)*sizeof(char));
+                *(returnInt+size-2)='\0';
+            }
         }
         else if(g==-1)
         {
@@ -143,6 +179,42 @@ char *sub(char *a,char *b)
                     *(returnInt+strlen(returnInt)-1-i)=*(a+strlen(a)-1-i)+10-*(b+strlen(b)-i-1)+48;   
                 }
                 i++;
+            }
+            ///
+            i=0;
+            while(*(returnInt+i)!='.')
+            { 
+                i++;
+            }
+            kl=i;
+            g=0;
+            while(*(returnInt+g)=='0'&&g<kl-1)
+            {
+                g++;
+            }
+            i=0;
+            
+            size=strlen(returnInt)-g+1;
+            while(i<size)
+            {
+                *(returnInt+i)=*(returnInt+i+g);
+                i++;
+            }
+            returnInt=(char*)realloc(returnInt,size*sizeof(returnInt));
+            
+            i=0;
+            while(*(returnInt+strlen(returnInt)-1-i)=='0')
+            {
+                i++;
+            }
+            size=strlen(returnInt)+1-i;
+            returnInt=(char*)realloc(returnInt,(strlen(returnInt)+1-i)*sizeof(char));
+            *(returnInt+size-1)='\0';
+            size=strlen(returnInt)+1;
+            if(*(returnInt+size-2)=='.')
+            {
+                returnInt=(char*)realloc(returnInt,(size-1)*sizeof(char));
+                *(returnInt+size-2)='\0';
             }
             ///
             size=strlen(returnInt)+1;

@@ -9,6 +9,7 @@ char *add(char *a,char *b)
 {
    char *returnInt;
    char **r;
+   int kl=0;
    r=understandstrings(a,b);
    a=*r;
    b=*(r+1);
@@ -64,6 +65,8 @@ char *add(char *a,char *b)
             i++;
        }
        *(returnInt+strlen(returnInt)-1-i)=g+48;
+       ///
+
        ///
        if(p==1)
        {

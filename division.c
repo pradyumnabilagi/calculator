@@ -6,7 +6,7 @@
 char *division(char *a,char *b)
 {
     
-    int i=0,size=0,g=0,p=0,t=0,k=0,op=1,dp=0;
+    int i=0,size=0,g=0,p=0,t=0,k=0,op=1,dp=0,kl=0;
     char *returnInt;
     char *conserve;
     char *conserve1;
@@ -405,7 +405,42 @@ char *division(char *a,char *b)
     
     
     ///
-
+    i=0;
+    while(*(returnInt+i)!='.')
+    { 
+        i++;
+    }
+    kl=i;
+    g=0;
+    while(*(returnInt+g)=='0'&&g<kl-1)
+    {
+        g++;
+    }
+    i=0;
+       
+    size=strlen(returnInt)-g+1;
+    while(i<size)
+    {
+        *(returnInt+i)=*(returnInt+i+g);
+        i++;
+    }
+    returnInt=(char*)realloc(returnInt,size*sizeof(returnInt));
+       
+    i=0;
+    while(*(returnInt+strlen(returnInt)-1-i)=='0')
+    {
+        i++;
+    }
+    size=strlen(returnInt)+1-i;
+    returnInt=(char*)realloc(returnInt,(strlen(returnInt)+1-i)*sizeof(char));
+    *(returnInt+size-1)='\0';
+    size=strlen(returnInt)+1;
+    if(*(returnInt+size-2)=='.')
+    {
+        returnInt=(char*)realloc(returnInt,(size-1)*sizeof(char));
+        *(returnInt+size-2)='\0';
+    }
+    ///
     if(p==1)
     {
         size=strlen(returnInt)+1;
@@ -425,7 +460,7 @@ char *division(char *a,char *b)
         free(*(store+i));
         i++;
     }
-
+       
     free(store);
     free(conserve);
     free(conserve1);
