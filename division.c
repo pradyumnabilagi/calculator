@@ -363,7 +363,18 @@ char *division(char *a,char *b)
                 }
                 if(op==0)
                 {
+                    if(i-k-1==2)
+                    {
+                    printf("the answer reapets form %dnd decimal place",i-k-1);
+                    }
+                    else if(i-k-1==3)
+                    {
+                    printf("the answer reapets form %drd decimal place",i-k-1);
+                    }
+                    else
+                    {
                     printf("the answer reapets form %dth decimal place",i-k-1);
+                    }
                     dp=i;
                 }
                 *(store+i-k-1)=(char*)realloc(*(store+i-k-1),(strlen(conserve)+1)*sizeof(char));
