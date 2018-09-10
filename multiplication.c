@@ -182,7 +182,7 @@ char *multiplication(char *a,char *b)
         i--;
     }
     *(returnInt+i)='.';
-    
+    ///
     if(p==1)
     {
         size=strlen(returnInt)+1;

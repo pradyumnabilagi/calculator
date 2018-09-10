@@ -6,13 +6,14 @@
 char *division(char *a,char *b)
 {
     
-    int i=0,size=0,g=0,p=0,t=0,k=0;
+    int i=0,size=0,g=0,p=0,t=0,k=0,op=1,dp=0;
     char *returnInt;
     char *conserve;
     char *conserve1;
     char *check;
     char *increment;
     char **r;
+    char **store;
   
     if((*a!='-'&&*b!='-')||(*a=='-'&&*b=='-'))
     {
@@ -87,13 +88,14 @@ char *division(char *a,char *b)
     conserve=(char*)malloc(sizeof(char));
     conserve1=(char*)malloc(sizeof(char));
     returnInt=(char*)malloc(2*sizeof(char));
+    store=(char**)malloc(sizeof(char*));
     *returnInt='0';
     *(returnInt+1)='\0';
     increment=(char*)malloc(3*sizeof(char));
     *increment='1';
     *(increment+1)='.';
     *(increment+2)='\0';
-    while(size!=1)
+    while(size!=1&&op!=0)
     {
         size=0;
         while(size==0)
@@ -246,7 +248,6 @@ char *division(char *a,char *b)
                 *increment='.';
                 *(increment+1)='1';
                 *(increment+2)='\0';
-                i=1;
             }
             else
             {
@@ -256,11 +257,143 @@ char *division(char *a,char *b)
                 *(increment+k-1)='1';
                 *(increment+k-2)='0';
             }
-        }    
+            //
+            conserve=(char*)realloc(conserve,(strlen(b)+1)*sizeof(char));
+            k=0;
+            while(k<strlen(b)+1)
+            {
+                *(conserve+k)=*(b+k);
+                k++;
+            } 
+
+            conserve1=(char*)realloc(conserve1,(strlen(returnInt)+1)*sizeof(char));
+            k=0;
+            while(k<strlen(returnInt)+1)
+            {
+                *(conserve1+k)=*(returnInt+k);
+                k++;
+            }
+            free(check);
+            
+            check=multiplication(b,returnInt);
+            
+            b=(char*)malloc((strlen(conserve)+1)*sizeof(char));
+            k=0;
+            while(k<strlen(conserve)+1)
+            {
+                *(b+k)=*(conserve+k);
+                k++;
+            }
+        
+            returnInt=(char*)malloc((strlen(conserve1)+1)*sizeof(char));
+            k=0;
+            while(k<strlen(conserve1)+1)
+            {
+                *(returnInt+k)=*(conserve1+k);
+                k++;
+            }
+
+            //
+            conserve=(char*)realloc(conserve,(strlen(a)+1)*sizeof(char));
+            k=0;
+            while(k<strlen(a)+1)
+            {
+                *(conserve+k)=*(a+k);
+                k++;
+            }
+
+            free(conserve1);
+            conserve1=sub(a,check);
+
+            a=(char*)malloc((strlen(conserve)+1)*sizeof(char));
+            k=0;
+            while(k<strlen(conserve)+1)
+            {
+                *(a+k)=*(conserve+k);
+                k++;
+            }
+            
+            store=(char**)realloc(store,(i+1)*sizeof(char*));
+            *(store+i)=(char*)malloc((strlen(conserve1)+1)*sizeof(char));
+            k=0;            
+            while(k<strlen(conserve1)+1)
+            {
+                *(*(store+i)+k)=*(conserve1+k);
+                k++;
+            }
+            
+            //check weather reapetation starts or not
+            conserve=(char*)realloc(conserve,3*sizeof(char));
+            *(conserve)='1';
+            *(conserve+1)='0';
+            *(conserve+2)='\0';
+            k=0;
+            while(k<i&&op!=0)
+            {
+                *(store+i)=multiplication(*(store+i),conserve);
+                conserve=(char*)malloc(3*sizeof(char));
+                *(conserve)='1';
+                *(conserve+1)='0';
+                *(conserve+2)='\0';
+                
+                conserve=(char*)realloc(conserve,(strlen(*(store+i-k-1))+1)*sizeof(char));
+                t=0;
+                while(t<strlen(*(store+i-k-1))+1)
+                {
+                    *(conserve+t)=*(*(store+i-k-1)+t);
+                    t++;
+                } 
+                r=understandstrings(*(store+i),*(store+i-k-1));
+                *(store+i)=*r;
+                *(store+i-k-1)=*(r+1);
+                free(r);
+                dp=0;
+                op=0;
+                while(dp<strlen(*(store+i))&&op==0)
+                {
+                    if(*(*(store+i)+dp)>*(*(store+i-k-1)+dp))
+                    {
+                    op=1; 
+                    }
+                    else if(*(*(store+i)+dp)<*(*(store+i-k-1)+dp))
+                    {
+                    op=-1;
+                    }
+                    dp++;
+                }
+                if(op==0)
+                {
+                    printf("the answer reapets form %dth decimal place",i-k-1);
+                    dp=i;
+                }
+                *(store+i-k-1)=(char*)realloc(*(store+i-k-1),(strlen(conserve)+1)*sizeof(char));
+                t=0;
+                while(t<strlen(*(store+i-k-1))+1)
+                {
+                    *(*(store+i-k-1)+t)=*(conserve+t);
+                    t++;
+                }
+                conserve=(char*)realloc(conserve,3*sizeof(char));
+                *(conserve)='1';
+                *(conserve+1)='0';
+                *(conserve+2)='\0';
+                k++;
+            }
+            *(store+i)=(char*)realloc(*(store+i),(strlen(conserve1)+1)*sizeof(char));
+            t=0;
+            while(t<strlen(conserve1)+1)
+            {
+                *(*(store+i)+t)=*(conserve1+t);
+                t++;
+            }
+            i++;
+            //
+        }
+            
     }
     
     
-    
+    ///
 
     if(p==1)
     {
@@ -273,9 +406,16 @@ char *division(char *a,char *b)
             i--;
         }
         *returnInt='-';
-    }   
+    }  
     
+    i=0;
+    while(i<dp+1)
+    {
+        free(*(store+i));
+        i++;
+    }
 
+    free(store);
     free(conserve);
     free(conserve1);
     free(increment);

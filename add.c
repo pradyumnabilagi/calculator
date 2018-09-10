@@ -64,6 +64,7 @@ char *add(char *a,char *b)
             i++;
        }
        *(returnInt+strlen(returnInt)-1-i)=g+48;
+       ///
        if(p==1)
        {
             size=strlen(returnInt)+1;

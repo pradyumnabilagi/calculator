@@ -97,6 +97,7 @@ char *sub(char *a,char *b)
                 }
                 i++;
             }
+            ///
         }
         else if(g==-1)
         {
@@ -143,6 +144,7 @@ char *sub(char *a,char *b)
                 }
                 i++;
             }
+            ///
             size=strlen(returnInt)+1;
             i=size+1-1;
             returnInt=(char*)realloc(returnInt,(size+1)*sizeof(char));
