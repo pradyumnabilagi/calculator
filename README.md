@@ -17,7 +17,7 @@ the answer for this one it comes out to be :
 the answer reapets form 0th decimal place
 0.006430868167202572347266881028938906752411575562700964630225080385852090032154340836012861736334405144694
 53376205787781350482315112540192926045016077170418
-if you type 1 by 5437 you will get the ans for this one but you will have to wait for even more time for the answer to appear.To say the truth I myself couldn't wait for that long .when I checked the number getting calculated by debuging the decimals digits where ever increasing untill I stoped it program from executing the decimal digits alone took 4 lines when I stoped the excetution. 
+if you type 1 by 5437 you will get the ans for this one but you will have to wait for even more time for the answer to appear.To say the truth I myself couldn't wait for that long .when I checked the number getting calculated by debuging the decimals digits where ever increasing untill I stoped the program from executing .the decimal digits alone took 4 lines when I stoped the excetution. 
 note:don't put the second number entry equal to zero while using division.
 
 
