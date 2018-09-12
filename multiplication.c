@@ -202,7 +202,7 @@ char *multiplication(char *a,char *b)
         *(returnInt+i)=*(returnInt+i+g);
         i++;
     }
-    returnInt=(char*)realloc(returnInt,size*sizeof(returnInt));
+    returnInt=(char*)realloc(returnInt,size*sizeof(char));
        
     i=0;
     while(*(returnInt+strlen(returnInt)-1-i)=='0')
