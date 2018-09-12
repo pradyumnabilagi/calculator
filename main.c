@@ -72,5 +72,6 @@ int main()
         r=sub(a,b);
     }
     printf("\n%s",r);
+    getch();
     return 0;
 }
