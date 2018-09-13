@@ -70,6 +70,20 @@ int main()
     else if(*chooser=='-')
     {
         r=sub(a,b);
+        i=0;
+            while(*(r+strlen(r)-1-i)=='0')
+            {
+                i++;
+            }
+            size=strlen(r)+1-i;
+            r=(char*)realloc(r,(strlen(r)+1-i)*sizeof(char));
+            *(r+size-1)='\0';
+            size=strlen(r)+1;
+            if(*(r+size-2)=='.')
+            {
+                r=(char*)realloc(r,(size-1)*sizeof(char));
+                *(r+size-2)='\0';
+            }
     }
     printf("\n%s",r);
     getch();
