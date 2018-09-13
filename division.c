@@ -480,7 +480,7 @@ char *division(char *a,char *b)
                     t++;
                 }
             }
-            printf("%s ",increment);
+            
             i++;
             
             //
