@@ -14,8 +14,10 @@ int main()
     char *chooser;
     int g,kl,i,size;
     chooser=(char*)malloc(2*sizeof(char));
-    a=(char*)malloc(15*sizeof(char));
-    b=(char*)malloc(15*sizeof(char));
+    printf("enter the max number of characters you will take to write your numbers:");
+    scanf("%d",&size);
+    a=(char*)malloc(size*sizeof(char));
+    b=(char*)malloc(size*sizeof(char));
     printf("enter the two numbers\n");
     scanf("%s%s",a,b);
     printf("choose which operation\nfor division enter '/'\nfor multiplication enter '*'\nfor addition enter '+'\nfor substraction enter '-'\n");
