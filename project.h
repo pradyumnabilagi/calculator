@@ -4,6 +4,7 @@ char *add(char *a,char *b);
 char *sub(char *a,char *b);
 char *multiplication(char *a,char *b);
 char *division(char *a,char *b);
+char *extraadd(char *a,char *b);
 #define PROJECT_H_INCLUDED
 
 
